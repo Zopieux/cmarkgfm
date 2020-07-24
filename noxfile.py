@@ -25,7 +25,7 @@ def unit(session):
 @nox.session
 def lint(session):
     session.install('flake8', 'readme_renderer')
-    session.run('flake8', 'cmarkgfm', 'tests')
+    session.run('flake8', 'src', 'tests')
     session.run('python', 'setup.py', 'check', '-m', '-r', '-s')
 
 
