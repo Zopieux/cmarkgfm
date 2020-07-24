@@ -53,6 +53,10 @@ jobs:
       - name: Package wheel
         run: python setup.py bdist_wheel
 
+      - uses: actions/upload-artifact@v2
+        with:
+          path: dist/cmarkgfm-*.whl
+
   lint:
     name: "Lint"
     runs-on: ubuntu-latest
