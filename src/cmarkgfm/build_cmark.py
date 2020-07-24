@@ -1,9 +1,9 @@
 import distutils.ccompiler
 import distutils.dist
 import glob
-import io
 import os
 import sys
+from io import open
 
 import cffi
 
@@ -17,10 +17,10 @@ EXTENSIONS_SRC_DIR = os.path.join(PACKAGE_ROOT, 'third_party/cmark/extensions')
 UNIX_GENERATED_SRC_DIR = os.path.join(PACKAGE_ROOT, 'generated', 'unix')
 WIN_GENERATED_SRC_DIR = os.path.join(PACKAGE_ROOT, 'generated', 'windows')
 
-with io.open(os.path.join(HERE, 'cmark.cffi.h'), 'r', encoding='utf-8') as fh:
+with open(os.path.join(HERE, 'cmark.cffi.h'), 'r', encoding='utf-8') as fh:
     CMARK_DEF_H = fh.read()
 
-with io.open(os.path.join(HERE, 'cmark_module.h'), 'r', encoding='utf-8') as fh:
+with open(os.path.join(HERE, 'cmark_module.h'), 'r', encoding='utf-8') as fh:
     CMARK_MODULE_H = fh.read()
 
 

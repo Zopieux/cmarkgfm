@@ -47,6 +47,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Install dependencies
+        run: python -m pip install -U pip wheel
+
       - name: Package wheel
         run: python setup.py bdist_wheel
 
